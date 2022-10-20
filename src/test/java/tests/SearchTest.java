@@ -1,17 +1,11 @@
 package tests;
 
-import io.appium.java_client.*;
+
 import lib.CoreTestCase;
 import lib.ui.MainPageObject;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.lang.reflect.Array;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class SearchTest extends CoreTestCase {
@@ -44,66 +38,8 @@ public class SearchTest extends CoreTestCase {
 
     }
 
-    /*@Test
-    public void FailLogin(){
-        String pas = "test";
-        MainPageObject mainPO = new MainPageObject(this.driver);
-    //найти три точки
-        WebElement ThreePoint = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/menu_overflow_button",
-                "Cannot find search element"
-        );
-        ThreePoint.click();
-
-        //поиск поля loginInWik button in menu three points
-        WebElement loginInWik =  mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/explore_overflow_account_name",
-                "cannot find login string"
-        );
-        loginInWik.click();
-
-        //поиск поля username
-        WebElement UserName = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/login_username_text",
-                "cannot find UserName element"
-        );
-
-        UserName.click();
-        UserName.sendKeys("test");
 
 
-        //поиск поля password
-
-        WebElement password = mainPO.waitForElementPresent(
-                "xpath:/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]",
-                "cannot find Password element"
-        );
-
-        WebElement passwordToVisible = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/text_input_password_toggle",
-                "cannot find passwordToVisible"
-        );
-        passwordToVisible.click();
-
-        password.click();
-        System.out.println("kak");
-        password.sendKeys(pas);
-        System.out.println("tit");
-
-
-
-
-
-        WebElement loginButton = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/login_button",
-                "cannot find login button"
-        );
-
-        loginButton.click();
-    }*/
-
-
-    //test is ok
     @Test
     public void testLoginPage() {
         String PageName = "Log in to Wikipedia";
@@ -133,7 +69,7 @@ public class SearchTest extends CoreTestCase {
 
     }
 
-    //test is ok
+
     @Test
     public void CraeteAc() {
         String PageName = "Create an account";
@@ -168,16 +104,16 @@ public class SearchTest extends CoreTestCase {
 
     }
 
-        //this test is ok
+
     @Test
     public void background () {
             MainPageObject mainPO = new MainPageObject(this.driver);
 
             driver.runAppInBackground(Duration.ofSeconds(10));
         }
-        //this test is ok
 
-        //test is ok
+
+
     @Test
     public void Settings(){
             String exampleLogoSettingsText = "Settings";
@@ -206,7 +142,7 @@ public class SearchTest extends CoreTestCase {
 
         }
 
-    //test is ok
+
     @Test
     public void SettingsEditLanguage (){
         String LanguageSet = "DE";
@@ -268,7 +204,7 @@ public class SearchTest extends CoreTestCase {
 
     }
 
-    //test is ok
+
     @Test
     public void SettingsAbout(){
         String SettingsAbout = "About";
@@ -306,28 +242,7 @@ public class SearchTest extends CoreTestCase {
 
 
 
-    /*@Test
-    public void hidenBlock(){
-        MainPageObject mainPO = new MainPageObject(this.driver);
-        WebElement dotThree= mainPO.waitForElementPresent(
-                "xpath:(//android.widget.ImageView[@content-desc=\"More options\"])[1]",
-                "cannot find threeDot"
-        );
-        dotThree.click();
 
-        WebElement blockHid = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/title",
-                "cannot find hideBlock"
-        );
-        blockHid.click();
-
-        WebElement News = mainPO.waitForElementPresent(
-                "xpath:/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView",
-                "cannot find news block"
-        );
-    }*/
-
-    //test is ok
     @Test
     public void MyListNull(){
 
@@ -352,7 +267,7 @@ public class SearchTest extends CoreTestCase {
     }
 
 
-    //test is ok
+
     @Test
     public void historyNull(){
         String EqualsText = "No recently viewed articles";
@@ -375,7 +290,7 @@ public class SearchTest extends CoreTestCase {
         assertEquals(TextDialog,EqualsText);
 
     }
-        //test is ok
+
     @Test
     public void navigate(){
         String equalString = "©  OpenStreetMap contributors";
@@ -397,37 +312,6 @@ public class SearchTest extends CoreTestCase {
         System.out.println(licenseText);
         assertEquals(licenseText,equalString);
     }
-    /*@Test
-    public void checkVoicePermissionFirstClick() {
-        driver.resetApp();
-        MainPageObject mainPO = new MainPageObject(this.driver);
-
-
-        WebElement microphone = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/voice_search_button",
-                "connot find element microphone"
-        );
-        microphone.click();
-
-
-    }*/
-    /*@Test
-    public void checkGoogleAudioSearch() {
-        MainPageObject mainPO = new MainPageObject(this.driver);
-
-        WebElement microphone = mainPO.waitForElementPresent(
-                "id:org.wikipedia:id/voice_search_button",
-                "connot find element microphone"
-        );
-        microphone.click();
-
-        WebElement AudioSearchDialog = mainPO.waitForElementPresent(
-                "id://com.google.android.googlequicksearchbox:id/transcription_intent_api_text",
-                "connot find dialog audioSearchDialog"
-        );
-        String textDialog = driver.getPageSource();
-
-    }*/
 
     }
 
